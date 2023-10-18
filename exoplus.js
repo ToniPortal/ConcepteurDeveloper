@@ -23,7 +23,7 @@ async function addAttribute(selector, name, value) {
     var all = await getAttribute(selector,name)
     console.log(all.join(","))
     getElement(selector).forEach(el => {
-        el.setAttribute(name, all.join(", ") + value)
+        el.setAttribute(name, all.join(",") + " " + value)
     })
 }
 
