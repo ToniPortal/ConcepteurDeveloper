@@ -20,10 +20,9 @@ async function getAttribute(selector, name) {
 }
 
 async function addAttribute(selector, name, value) {
-    var all = await getAttribute(selector,name)
-    console.log(all.join(","))
+    let all = await getAttribute(selector,name)
     getElement(selector).forEach(el => {
-        el.setAttribute(name, all.join(",") + " " + value)
+        el.setAttribute(name, all.join(" ") + " " + value)
     })
 }
 
@@ -34,5 +33,5 @@ window.onload = async function () {
 
     // console.log(await getAttribute("td", "class"));
 
-    addAttribute("td", "class", "note")
+    addAttribute("td", "class", "note gros")
 }
