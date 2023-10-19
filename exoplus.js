@@ -20,9 +20,11 @@ async function getAttribute(selector, name) {
 }
 
 async function addAttribute(selector, name, value) {
-    let all = await getAttribute(selector,name)
+    let all = await getAttribute(selector, name)
+    let id = 0
     getElement(selector).forEach(el => {
-        el.setAttribute(name, all.join(" ") + " " + value)
+        el.setAttribute(name, all[id] + " " + value)
+        id++;
     })
 }
 
@@ -32,6 +34,38 @@ window.onload = async function () {
     // setAttribute("td", "class", "note");
 
     // console.log(await getAttribute("td", "class"));
-
+    console.log(document.getElementsByClassName("note"))
     addAttribute("td", "class", "note gros")
+    console.log(await euclide(Number(prompt("A")), Number(prompt("B"))));
+}
+
+function euclide(a, b) {
+    while (a != b) {
+        if (a > b) {
+            a = a - b;
+        } else {
+            b = b - a;
+        }
+    }
+    return a;
+}
+
+function PGCD(a, b) {
+    while (a != b) {
+        if (a > b) {
+            a = a - b;
+        } else {
+            b = b - a;
+        }
+    }
+    return a;
+}
+
+function savedixneufoctobre() {
+    a = prompt("Entrer h");
+    alert(typeof a);
+    b = a + 1;
+    alert(b);
+    b -= 1;
+    alert(b);
 }
