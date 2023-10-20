@@ -69,3 +69,18 @@ function savedixneufoctobre() {
     b -= 1;
     alert(b);
 }
+
+function aucube(a) {
+    return a * a * a
+}
+
+function aucube(a){
+    return a*a*a
+  }
+  function imane() {
+  let ad = prompt("Prompt")
+  
+      let resultat = aucube(ad)
+      console.log("paf",resultat)
+  }
+  document.write(`<h1 onclick="imane()">Coucou</h1>`);
