@@ -29,14 +29,11 @@ async function addAttribute(selector, name, value) {
 }
 
 window.onload = async function () {
-    //console.log(getElement("td"))
-
-    // setAttribute("td", "class", "note");
-
-    // console.log(await getAttribute("td", "class"));
-    console.log(document.getElementsByClassName("note"))
+    console.log(getElement("td"))
+    setAttribute("td", "class", "note");
+    
+    console.log(await getAttribute("td", "class"));
     addAttribute("td", "class", "note gros")
-    console.log(await euclide(Number(prompt("A")), Number(prompt("B"))));
 }
 
 function euclide(a, b) {
