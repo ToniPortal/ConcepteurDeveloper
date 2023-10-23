@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 4</title>
+    <style>
+        /* Styles pour le tableau */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Styles pour les cellules du tableau */
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        /* Styles pour l'en-tête du tableau */
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 8px;
+        }
+
+        /* Styles pour les lignes impaires du tableau */
+        tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        /* Styles pour les cellules du tableau */
+        td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        /* Style pour les cellules de la première colonne (min/max) */
+        td:first-child {
+            font-weight: bold;
+        }
+
+        /* Style pour les cellules de la deuxième colonne (nbtenta) */
+        td:nth-child(2) {
+            font-weight: bold;
+            color: #007bff;
+            /* Par exemple, couleur de la police bleue */
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" placeholder="Minimum" value="0" id="min">
+    <input type="number" placeholder="Maximum" value="100" id="max">
+    <button onclick="start()">Start Game</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Min/Max</th>
+                <th>NbTentative</th>
+            </tr>
+        </thead>
+        <tbody id="bestscoretbody">
+        </tbody>
+    </table>
+
+
+    <script>
+        function nbAlea(min, max) {
+            var nb = min + (max - min + 1) * Math.random();
+            return Math.floor(nb);
+        }
+
+        function start() {
+            const min = Number(document.getElementById("min").value);
+            const max = Number(document.getElementById("max").value);
+            console.log(`${min} / ${max}`)
+            if (min != -1 && max != 0) {
+                let fin = false;
+                var chiffrerand = nbAlea(min, max);
+                console.log("Chiffre a trouver !", chiffrerand)
+                let nbtenta = 0;
+                while (!fin) {
+                    nbtenta++;
+                    let chiffreutil = prompt(`Quelle est votre chiffre entre ${min} et ${max}`)
+                    console.log("Chiffre prompt", chiffreutil)
+                    if(chiffreutil == null) {
+                        fin = true;
+                        console.log("Fin de la partie(annuler prompt)")
+                    }else if (chiffreutil == chiffrerand) {
+                        alert(`Vous avez reussi en ${nbtenta} tentative`)
+                        bestscore.push({ "min": min, "max": max, "nbtenta": nbtenta });
+                        fin = true;
+                        tableBestScore();
+                    } else if (chiffreutil < chiffrerand) {
+                        if (confirm("Plus grand; Réssayer ou continuer ?")) {
+
+                        } else {
+                            fin = true;
+                        }
+                    } else {
+                        if (confirm("Plus petis ; Réssayer ou continuer ?")) {
+
+                        } else {
+                            fin = true;
+                        }
+                    }
+                }
+            } else {
+                alert("Veuillez mettre des valeur min et max");
+            }
+        }
+
+        var bestscore = [];
+        const bestscoretbody = document.getElementById("bestscoretbody");
+        function tableBestScore() {
+            bestscoretbody.innerHTML = "";
+            bestscore.sort((a, b) => a.nbtenta - b.nbtenta);
+
+            console.log("Score array !", bestscore)
+            bestscore.forEach(sc => {
+                console.log("L'element haha", sc)
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                td1.innerText = `${sc.min}/${sc.max}`;
+                td2.innerText = sc.nbtenta;
+                tr.append(td1);
+                tr.append(td2);
+
+                bestscoretbody.append(tr);
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo5</title>
+    <script>
+        function start() {
+            let change = document.getElementById("change").value;
+            let styler = document.getElementById("style").value;
+
+            document.getElementsByTagName(change)[0].style = styler;
+        }
+    </script>
+</head>
+
+<body>
+    <label>Celui que tu veut changer</label>
+    <input id="change" value="body" type="text">
+
+    <label>Le style que tu veut mettre</label>
+    <input id="style" value='background-color: red;'>
+
+    <button onclick="start()">Changer !</button>
+</body>
+
+</html>

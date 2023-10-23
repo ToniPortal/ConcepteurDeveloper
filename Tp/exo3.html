@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 3</title>
+</head>
+
+<body>
+    <script>
+        function multiplication(n) {
+            var sum = 0;
+            for (i = 1; i <= 10 ; i++) {
+                sum += 1;
+                // ecriture d’une chaine de caractere dans le document courant
+                document.write(`${n}*${sum} = ${n*sum}<br>`);
+            }
+            return sum;
+        }
+
+        var nombre = prompt("la table de multiplcation");
+        multiplication(nombre)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        var demandemax = Number(prompt("NbMax de formulaire"));
+
+        formInput()
+        formRadio()
+        formSelect()
+        function formInput() {
+            for (i = 0; i < demandemax; i++) {
+                document.write(`    <form action="resultat.html" method="get">
+        <input type="text" id="input" name="valeur" value="5">
+        <button type="submit">Envoyer </button>    </form><br>`)
+            }
+        }
+        function formRadio() {
+            for (i = 0; i < demandemax; i++) {
+
+                document.write(`    <form action="resultat.html" method="get">
+        <label><input type="radio" name="valeur" value="1"> 1</label>
+        <label><input type="radio" name="valeur" value="2"> 2</label>
+        <label><input type="radio" name="valeur" value="3"> 3</label>
+        <label><input type="radio" name="valeur" value="4"> 4</label>
+        <label><input type="radio" name="valeur" value="5"> 5</label>
+        <button type="submit">Envoyer </button>    </form><br>
+`)
+            }
+        }
+        function formSelect() {
+            for (i = 0; i < demandemax; i++) {
+                document.write(`    <form action="resultat.html" method="get">
+        <select id="select" name="valeur">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button type="submit">Envoyer </button>    </form><br>`)
+            }
+        }
+    </script>
+
+</body>
+
+</html>
