@@ -1,6 +1,6 @@
 <h1 align="center">ConcepteurDeveloppeur</h1>
 
-<p align="center">Certainne chose que j'ai faite pendant ma formation bac+3 de concepteur développeur</p>
+<p align="center">Certaine chose que j'ai faite pendant ma formation bac+3 de concepteur développeur</p>
 
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://www.npmjs.com)
