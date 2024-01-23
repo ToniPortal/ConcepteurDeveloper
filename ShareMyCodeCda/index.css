@@ -1,0 +1,161 @@
+* {
+    font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 302px;
+    background-color: #5F4B8B;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    align-items: center;
+
+}
+
+
+
+header>h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 10px 15px 10px 50px;
+}
+
+
+
+
+h3 {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 10px;
+
+}
+
+p {
+    font-size: 24px;
+    margin: 10px;
+
+}
+
+footer > p{
+    margin-bottom: 50px;
+
+}
+
+footer > img {
+    /* the-simpsons-mr-burns 2 */
+    height: 360px;
+    margin: 0;
+    padding: 0;
+    display: block
+}
+
+@media (min-width:480px) {
+    /* Pc version */
+    section > div {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    header>button {
+        position: absolute;
+        
+        border-radius: 25px;
+        background-color: #FCA311;
+        width: 250px;
+        height: 75px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    
+    header {
+        margin-bottom: 250px;
+    }
+
+    section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 250px;
+    }
+    section h3 {
+        margin-bottom: 50px;
+    }
+    section p{
+        padding-right: 200px;
+        text-align: left;
+    }
+    section p:nth-child(1){
+        padding-left: 200px;
+
+    }
+
+    footer {
+        background-color: #E5E5E5;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+        width: 1440px;
+        height: 593px;
+    }
+
+    footer > div {
+        flex-direction: column;
+    }
+    footer h3 {
+        padding-left: 200px;
+    }
+    footer p {
+        padding: 0px 200px 0px 200px;
+    }
+
+    footer img {
+        width: 496px;
+        height: 360px;
+        margin-right: 150px;
+    }
+
+    
+}
+@media (max-width:500px) {
+    /*Mobile version */
+    section > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header>button {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-radius: 25px;
+        background-color: #FCA311;
+        width: 250px;
+        height: 75px;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    section {
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        margin-bottom: 50px;
+    }
+
+}
